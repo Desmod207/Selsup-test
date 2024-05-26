@@ -18,7 +18,7 @@ public class CrptApi {
 
     private final Deque<Long> timeDeque = new ConcurrentLinkedDeque<>();
 
-    private CrptApi(TimeUnit timeUnit, int requestLimit) {
+    public CrptApi(TimeUnit timeUnit, int requestLimit) {
         this.restTemplate = new RestTemplate();
         this.timePeriod = timeUnit.toChronoUnit().getDuration().toNanos();
         this.requestLimit = requestLimit;
